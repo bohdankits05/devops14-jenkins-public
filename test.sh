@@ -1,1 +1,1 @@
-testing git connection
+echo "testing git connection"
