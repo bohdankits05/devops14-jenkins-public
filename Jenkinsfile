@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Checkout') {
             steps {
-                    git branch: 'main', credentialsId: 'jenkins', url: 'git@github.com:bohdankits05/devops14-jenkins-public.git'
+                    git branch: 'main', url: 'git@github.com:bohdankits05/devops14-jenkins-public.git'
                 }
             }
 
