@@ -12,7 +12,7 @@ pipeline {
         stage('TFInit') {
             steps {
                 //terraform initialize
-                sh "terraform fmt"
+                //sh "terraform fmt"
                 sh "terraform init"
             }
         }
