@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        
+        stage(‘Checkout’) {
+            steps {
+                git branch: 'main', url: 'git@github.com:bohdankits05/devops14-jenkins-public.git'
+            }
+        }
+
+        stage(‘TFInit’) {
+            steps {
+                //terraform initialize
+                sh "terraform init"
+            }
+        }
+        stage(‘TFPlan’) {
+            steps {
+                sh "terraform plan"
+            }
+        }
+        stage(‘TFApply’) {
+            steps {
+                sh "terraform apply -auto-approve"
+            }
+        }
+
+    }
+}
