@@ -1,5 +1,5 @@
 pipeline {
-    agent { lable 'main' }
+    agent any
 
     stages {
         
@@ -12,6 +12,7 @@ pipeline {
         stage('TFInit') {
             steps {
                 //terraform initialize
+                sh "terraform fmt"
                 sh "terraform init"
             }
         }
